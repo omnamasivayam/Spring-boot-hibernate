@@ -29,11 +29,14 @@ public class User {
   
   // The user email
   @NotNull
-  private String email;
+  private String project;
   
   // The user name
   @NotNull
   private String name;
+  
+  @NotNull
+  private String designation;
 
   // ==============
   // PUBLIC METHODS
@@ -45,35 +48,44 @@ public class User {
     this.id = id;
   }
   
-  public User(String email, String name) {
-    this.email = email;
+  public User(String name, String project, String designation ) {  
     this.name = name;
+    this.project = project;
+    this.designation = designation;
   }
 
-  // Getter and setter methods
+public long getId() {
+	return id;
+}
 
-  public long getId() {
-    return id;
-  }
+public void setId(long id) {
+	this.id = id;
+}
 
-  public void setId(long value) {
-    this.id = value;
-  }
+public String getProject() {
+	return project;
+}
 
-  public String getEmail() {
-    return email;
-  }
+public void setProject(String project) {
+	this.project = project;
+}
+
+public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+public String getDesignation() {
+	return designation;
+}
+
+public void setDesignation(String designation) {
+	this.designation = designation;
+}
+
   
-  public void setEmail(String value) {
-    this.email = value;
-  }
-  
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String value) {
-    this.name = value;
-  }
   
 } // class User

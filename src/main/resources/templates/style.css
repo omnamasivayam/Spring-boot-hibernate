@@ -1,0 +1,19 @@
+.header {
+    background-color:green;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+.left {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;	      
+}
+.right {
+    width:350px;
+    float:left;
+    padding:10px;	 	 
+}

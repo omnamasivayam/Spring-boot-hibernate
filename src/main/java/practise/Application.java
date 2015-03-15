@@ -15,3 +15,13 @@ public class Application {
   }
 
 }
+
+
+
+/*
+java -cp hsqldb.jar org.hsqldb.Server -database.0 file:newDbfile -dbname.0 omdb
+
+mvn spring-boot:run
+
+wmic - cmd prompt fgull screen
+*/

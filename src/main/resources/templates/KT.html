@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  	 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!--link rel="stylesheet" type="text/css" media="all" href="style.css" th:href="@{style.css}" /!-->
+</head>
+<body >
+
+	<div class="jumbotron">
+    <p th:text="'Welcome to Alcatel Lucent ' + ${name} + '!'" />
+	</div>
+	<div class="container">
+	<div class="row">
+	<div class="col-sm-4">
+	<div class="list-group">
+  		<h2>Select Option</h2>
+    		<a href="/welcome" class="list-group-item ">
+      			<h4 class="list-group-item-heading">Projects List</h4>
+      			<p class="list-group-item-text">Add/delete or edit project details</p>
+    		</a>
+    		<a href="/employee" class="list-group-item ">
+      			<h4 class="list-group-item-heading">Employee List</h4>
+      			<p class="list-group-item-text">Add/delete a member from Project</p>
+    		</a>
+    		<a href="/kt" class="list-group-item active">
+      			<h4 class="list-group-item-heading">Knowledge Transfer Status</h4>
+      			<p class="list-group-item-text">Add/remove or Check status of KT going on</p>
+    		</a>
+  	</div>
+  	</div>
+	<div class="col-sm-8">
+    	<h1>KT assigned</h1>
+    	<script>
+  				$(function() {
+    						$( "#datepicker" ).datepicker();
+  						});
+  		</script>
+  		<p>Date: <input type="text" id="datepicker"></input></p>
+	</div>
+	</div>	
+</div>
+</body>
+</html>
