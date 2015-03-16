@@ -60,12 +60,12 @@ public class UserController {
 		modelAndView.addObject("a", a);
 		modelAndView.addObject("value", "select a project and submit");
 		modelAndView.addObject("name" , name);
-		for(User s :  _userDao.findAll()){
+		/*for(User s :  _userDao.findAll()){
 			System.out.println(s.getId());
 			System.out.println(s.getName());
 			System.out.println(s.getProject());
 			System.out.println(s.getDesignation());	
-		}
+		}*/
 		System.out.println( _userDao.findAll());
 		System.out.println("ended here");
 		return modelAndView;
@@ -85,5 +85,25 @@ public class UserController {
 		 modelAndView.addObject("result", "Currently no members");
 		 return modelAndView;
 	}
+  
+  
+	@RequestMapping("/kt")
+	  @ResponseBody
+	  public ModelAndView index() {
+		//  ModelAndView modelAndView = new ModelAndView("login");
+		  ModelAndView modelAndView = new ModelAndView("KT");
+		  //modelAndView.addObject("msg", "hello world");
+		  Object a = _ProjectDao.findAll();
+		  Object emps = _userDao.findAll();
+		  modelAndView.addObject("bbb", emps);
+		  modelAndView.addObject("aaa", a);
+		  for(Project s :  _ProjectDao.findAll()){
+				System.out.println(s.getProjectid());
+				System.out.println(s.getProjectname());
+				System.out.println(s.getLocation());
+				System.out.println(s.getClient());	
+			}
+		  return modelAndView;
+	  }
   
 } // class UserController
