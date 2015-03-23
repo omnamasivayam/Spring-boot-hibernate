@@ -37,6 +37,8 @@ public class User {
   
   @NotNull
   private String designation;
+  
+  
 
   // ==============
   // PUBLIC METHODS

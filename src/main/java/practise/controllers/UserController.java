@@ -87,23 +87,6 @@ public class UserController {
 	}
   
   
-	@RequestMapping("/kt")
-	  @ResponseBody
-	  public ModelAndView index() {
-		//  ModelAndView modelAndView = new ModelAndView("login");
-		  ModelAndView modelAndView = new ModelAndView("KT");
-		  //modelAndView.addObject("msg", "hello world");
-		  Object a = _ProjectDao.findAll();
-		  Object emps = _userDao.findAll();
-		  modelAndView.addObject("bbb", emps);
-		  modelAndView.addObject("aaa", a);
-		  for(Project s :  _ProjectDao.findAll()){
-				System.out.println(s.getProjectid());
-				System.out.println(s.getProjectname());
-				System.out.println(s.getLocation());
-				System.out.println(s.getClient());	
-			}
-		  return modelAndView;
-	  }
+
   
 } // class UserController

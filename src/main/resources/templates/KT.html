@@ -38,35 +38,66 @@
   	</div>
 	<div class="col-sm-8">
     	<h1>KT assigned</h1>
+    	<form th:action="@{/kt}" method="post">
     	<h4>Select Project</h4>
-			<select>
+			<select name="project">
 				<option th:each="project : ${aaa}" th:value="${project}" th:text="${project.projectname}">Project name</option>
 			</select>
+			
 		<h4>Select Trainer</h4>
-		<select>
+		<select name="trainer">
 				<option th:each="user : ${bbb}" th:value="${user}" th:text="${user.name}">Project name</option>
 		</select>
+		
 		<h4>Select Trainee</h4>
-		<select>
+		<select name="trainee">
 				<option th:each="user : ${bbb}" th:value="${user}" th:text="${user.name}">User name</option>
 		</select>
+		
+		
 		<br></br>
 		<h4>Select Start Date</h4>
     	<script>
   				$(function() {
-    						$( "#datepicker1" ).datepicker();
+    						$( "#startDate" ).datepicker();
   						});
   		</script>
-  		<p>Date: <input type="text" id="datepicker1"></input></p>
+  		<p>Date: <input type="text" id="startDate"></input></p>
+  		
+  		
   		<h4>Select End Date</h4>
     	<script>
   				$(function() {
-    						$( "#datepicker2" ).datepicker();
+    						$( "#endDate" ).datepicker();
   						});
   		</script>
-  		<p>Date: <input type="text" id="datepicker2"></input></p>
+  		<p>Date: <input type="text" id="endDate"></input></p>
   		<h4>Select Topic </h4>
+  		<label for="topic">Topic</label>
+    	<input type="text" class="form-control" id="topic" name="topic" placeholder="enter name of topic here"/> 
+  		<input type="submit" class="btn btn-success" name="action" value="Add" />
+  		</form>
+  		
 	</div>
+	
+	<br></br>
+			<table class="table table-bordered">
+				<tr>
+					<th>ID</th>
+					<th>Employee name</th>
+					<th>Project</th>
+					<th>Designation</th>
+				</tr>
+				<tr th:each="kt : ${kts}">
+	        		<td th:text="${kt.id}">1</td>
+	        		<td th:text="${kt.trainee.name}">ToName</td>
+	        		<td th:text="${kt.trainer.name}">FromName</td>
+	        		<td th:text="${kt.startDate}">1/1/1</td>
+	        		<td th:text="${kt.endDate}">9/9/9</td>
+	        		<td th:text="${kt.project.projectname}">project</td>
+	        		<td th:text="${kt.topic}">topic</td>
+				</tr>
+			</table>
 	</div>	
 </div>
 </body>
